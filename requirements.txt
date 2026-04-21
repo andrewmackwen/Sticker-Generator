@@ -3,3 +3,4 @@ pandas
 reportlab
 python-barcode
 svglib
+lxml
