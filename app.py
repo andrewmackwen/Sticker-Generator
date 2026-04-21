@@ -1,15 +1,20 @@
 import streamlit as st
 import pandas as pd
-import json
 import os
-import tempfile
 import io
-from reportlab.pdfgen import canvas
-from reportlab.lib.units import cm
-from reportlab.graphics import renderPDF
-from svglib.svglib import svg2rlg
-import barcode
-from barcode.writer import SVGWriter
+import tempfile
+import json
+
+# محاولة استيراد المكتبات الخارجية بحذر
+try:
+    from reportlab.pdfgen import canvas
+    from reportlab.lib.units import cm
+    from reportlab.graphics import renderPDF
+    from svglib.svglib import svg2rlg
+    import barcode
+    from barcode.writer import SVGWriter
+except ImportError as e:
+    st.error(f"Error loading libraries: {e}. Please check requirements.txt")
 
 # ==========================================
 # 1. Auth System
